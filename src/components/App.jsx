@@ -31,7 +31,11 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <InputArea value={inputText} />
+      <InputArea
+        value={inputText}
+        handleChange={handleChange}
+        addItem={addItem}
+      />
       <div>
         <ul>
           {items.map((todoItem, index) => (
