@@ -5,6 +5,13 @@ import InputArea from "./InputArea";
 function App() {
   const [items, setItems] = useState([]);
 
+  function addItem(inputText) {
+    setItems((prevItems) => {
+      return [...prevItems, inputText];
+    });
+    setInputText("");
+  }
+
   function deleteItem(id) {
     setItems((prevItems) => {
       return prevItems.filter((item, index) => {
@@ -18,7 +25,7 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <InputArea />
+      <InputArea onAdd={addItem} />
       <div>
         <ul>
           {items.map((todoItem, index) => (

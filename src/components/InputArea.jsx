@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function InputArea() {
+function InputArea(props) {
   const [inputText, setInputText] = useState("");
 
   function handleChange(event) {
@@ -8,17 +8,10 @@ function InputArea() {
     setInputText(newValue);
   }
 
-  function addItem() {
-    setItems((prevItems) => {
-      return [...prevItems, inputText];
-    });
-    setInputText("");
-  }
-
   return (
     <div className="form">
       <input onChange={handleChange} type="text" value={inputText} />
-      <button onClick={addItem}>
+      <button onClick={props.onAdd}>
         <span>Add</span>
       </button>
     </div>
