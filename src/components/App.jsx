@@ -5,13 +5,6 @@ import InputArea from "./InputArea";
 function App() {
   const [items, setItems] = useState([]);
 
-  function addItem() {
-    setItems((prevItems) => {
-      return [...prevItems, inputText];
-    });
-    setInputText("");
-  }
-
   function deleteItem(id) {
     setItems((prevItems) => {
       return prevItems.filter((item, index) => {

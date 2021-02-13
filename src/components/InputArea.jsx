@@ -7,6 +7,14 @@ function InputArea() {
     const newValue = event.target.value;
     setInputText(newValue);
   }
+
+  function addItem() {
+    setItems((prevItems) => {
+      return [...prevItems, inputText];
+    });
+    setInputText("");
+  }
+
   return (
     <div className="form">
       <input onChange={handleChange} type="text" value={inputText} />
